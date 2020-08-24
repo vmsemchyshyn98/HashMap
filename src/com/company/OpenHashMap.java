@@ -8,10 +8,19 @@ public class OpenHashMap {
     int FREE = Integer.MIN_VALUE;
 
     public OpenHashMap(int size) {
-        this.size = Math.max(3 * size / 2, size) + 1;
+        this.size = size;
         keys = new int [this.size];
         values = new long [this.size];
         Arrays.fill(keys, FREE);
+    }
+
+    void getResult(){
+        for (int i = 0; i < keys.length-1; i++) {
+            System.out.println("keys"+i+": "+keys[i]);
+        }
+        for (int i = 0; i < values.length-1; i++) {
+            System.out.println("values"+i+": "+values[i]);
+        }
     }
 
     int hash(int k) {
